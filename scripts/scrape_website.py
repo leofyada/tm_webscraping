@@ -1,6 +1,7 @@
 # Import library
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
 
 # Static variables
 url = "https://thrivemarket.com/our-products"
@@ -23,5 +24,6 @@ def get_products():
     # Return products
     return product_list
 
-
+df = pd.DataFrame(get_products(), columns=['name'])
+df.to_csv("data/product_categories.csv")
 

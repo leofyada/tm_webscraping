@@ -19,7 +19,7 @@ MY_API_KEY = os.getenv("API_KEY")
 url = "https://api.climatiq.io/data/v1/search"
 
 # Function to get carbon emission estimate
-def get_emission(query):
+def get_emission(query, product_category):
     # Completely empty to store carbon emissiondata 
     df = pd.DataFrame()
     # Parameters
@@ -41,7 +41,7 @@ def get_emission(query):
         # And here you can do whatever you want with the results
         for result in response['results']:
             
-            # === Top-level fields ===
+            # === Top-level fields ===            
             activity_id = result['activity_id']
             material_id = result['id']
             name = result['name']
@@ -81,7 +81,8 @@ def get_emission(query):
             data_version_info_status = data_version_info.get('status')
 
 
-            data = [{            
+            data = [{
+                "product_category" : product_category,            
                 "type" : type,
                 "query" : query,
                 "activity_id" : activity_id,
