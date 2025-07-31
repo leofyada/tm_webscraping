@@ -16,7 +16,7 @@ def get_carbon_from_products(list_category):
         print(json_data)
         for my_data in json_data:
             print(my_data)
-            df_emission = get_emission(my_data['Product name'])
+            df_emission = get_emission(my_data['Product name'], category)
             print(df_emission)
             if df_emission.empty:
                 pass
