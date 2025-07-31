@@ -13,7 +13,7 @@ carbon_df.columns = ['entity', 'year', 'emission_per_kilogram']
 # Get data from Climatiq
 # Load .env variables into environment
 load_dotenv()
-# Access your API key
+# Access Climatiq API key
 MY_API_KEY = os.getenv("API_KEY")
 # Endpoing
 url = "https://api.climatiq.io/data/v1/search"
