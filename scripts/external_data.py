@@ -117,11 +117,13 @@ def get_emission(query):
                 "data_version_status" : data_version_status,
                 "data_version_info" : data_version_info,
                 "data_version_info_status" : data_version_info_status}]
+            
             df_material = pd.DataFrame(data)
+            
             if df_material.empty:
-            return None
+                return None
             else:
-            df = pd.concat([df, df_material])
+                df = pd.concat([df, df_material])
 
         return df
     
