@@ -23,8 +23,5 @@ def get_products():
     # Return products
     return product_list
 
-lista = get_products()
-for product in lista:
-    print(product)
 
 
